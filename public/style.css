@@ -1,41 +1,82 @@
-:root{
+   :root{
     --clock-w : 120px;
     --clock-h : 120px;
+    --second-color : brown;
+    --minute-color : red;
+    --hour-color : yellow;
+    --clock-left : 30%;
+    --clock-top  : 30%;
+    --clock-bkg : blue;
+    --clock-radius: 30%;
+    --clock-opacity: 1.0;
+    --hand-left: 4%;
+    --hand-top: 48%;
+    --hand-height: 6px;
+    --hand-width: 45%;
+    --hand-origin: 100%;
+    --hand-bkg: black;
+    --hand-transition: 0.05;
+    --hand-border-radius: 30%;
+    --hand-transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
 }
 
 .clock{
     position: absolute;
     width: var(--clock-w);
     height: var(--clock-h);
-    top: 20%;
-    left: 30%; 
-    background-color:blue;
+    top: var(--clock-top);
+    left: var(--clock-left); 
+    background-color: var(--clock-bkg);
+    border-radius: var(--clock-radius);
+    opacity: var(--clock-opacity);
 }
 
 .hand{
     position: absolute;
-    top: 45%;
-    height: 6px;
-    width: 45%;
-    transform-origin: 100%;
-    background-color: black;
-    transition: all 0.05;
-    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+    top: var(--hand-top);
+    left: var(--hand-left);
+    height: var(--hand-height);
+    width: var(--hand-width);
+    transform-origin: var(--hand-origin);
+    background-color: var(--hand-bkg);
+    transition: var(--hand-transition);
+    transition-timing-function: var(--hand-transition-timing-function);
+    border-radius: var(--hand-border-radius);
+    
 }
 
 .hand.second{
-    background-color:brown;
+    background-color: var(--second-color);
     
 }
 
 .hand.minute{
-    background-color: red;
+    background-color: var(--minute-color);
     
 }
 
 .hand.hour{
-    background-color: yellow;
+    background-color: var(--hour-color);
     
 }
 
-
+.number.bottom {
+    position: absolute;
+    left: 45%;
+    bottom: 1%;
+}
+.number.top {
+    position: absolute;
+    left: 45%;
+    top: 1%;
+}
+.number.left {
+    position: absolute;
+    left: 1%;
+    top: 45%;
+}
+.number.right {
+    position: absolute;
+    right: 1%;
+    top: 45%;
+}
